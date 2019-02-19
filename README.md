@@ -1,4 +1,4 @@
-# ngx-gapi: Gapi Auth Service template for Angular 7+
+# Google Javascript Client service template for Angular 7+
 This repo contains a basic template for a Gapi Auth service for Angular 7+.
 The template contains functions for gapi client loading and initialization, sign in state, and basic functions for getting users and auth tokens. 
 
