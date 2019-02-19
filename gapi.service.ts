@@ -1,7 +1,7 @@
 import { Injectable, NgZone } from '@angular/core';
 import { credentials } from '/secrets/credentials.js'; // replace with credentials file 
 import { Subject } from 'rxjs';
-declare const gapi: any; // typescript bug fix
+// declare const gapi: any; // yarn typings bug fix
 
 @Injectable({
     providedIn: 'root'
@@ -15,6 +15,10 @@ export class GapiService {
     status$ = new Subject<boolean>();
 
 
+    /**
+     * Because the Google Client promise implementation is a custom one, the callback is effectively running from outside of Angular.
+     * We use NgZone throughout the service to stay in the zone.
+     */
     constructor(
         private zone: NgZone   
     ) { }
